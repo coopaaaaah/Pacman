@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class Pacman : MonoBehaviour
 {
+    public LayerMask wallLayer;
     
     [SerializeField] private float speed = 5f;
     [SerializeField] private Transform pacmanMovePoint;
@@ -28,14 +29,20 @@ public class Pacman : MonoBehaviour
             if (_moveAction.inProgress)
             {
                 Vector2 direction = _moveAction.ReadValue<Vector2>();
-            
+                
                 if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
                 {
-                    pacmanMovePoint.position += new Vector3(direction.x, Zero, Zero);
+                    if (!Physics2D.OverlapCircle(pacmanMovePoint.position + new Vector3(direction.x, Zero, Zero), .2f,wallLayer))
+                    {
+                        pacmanMovePoint.position += new Vector3(direction.x, Zero, Zero);
+                    }
                 }
                 else
                 {
-                    pacmanMovePoint.position += new Vector3(Zero, direction.y, Zero);
+                    if (!Physics2D.OverlapCircle(pacmanMovePoint.position + new Vector3(Zero, direction.y, Zero), .2f,wallLayer))
+                    {
+                        pacmanMovePoint.position += new Vector3(Zero, direction.y, Zero);
+                    }
                 }
             }  
         }
