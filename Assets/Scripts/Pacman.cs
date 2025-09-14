@@ -32,14 +32,14 @@ public class Pacman : MonoBehaviour
                 
                 if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
                 {
-                    if (!Physics2D.OverlapCircle(pacmanMovePoint.position + new Vector3(direction.x, Zero, Zero), .2f,wallLayer))
+                    if (!Physics2D.OverlapCircle(pacmanMovePoint.position + new Vector3(direction.x, Zero, Zero), .9f,wallLayer))
                     {
                         pacmanMovePoint.position += new Vector3(direction.x, Zero, Zero);
                     }
                 }
                 else
                 {
-                    if (!Physics2D.OverlapCircle(pacmanMovePoint.position + new Vector3(Zero, direction.y, Zero), .2f,wallLayer))
+                    if (!Physics2D.OverlapCircle(pacmanMovePoint.position + new Vector3(Zero, direction.y, Zero), .9f,wallLayer))
                     {
                         pacmanMovePoint.position += new Vector3(Zero, direction.y, Zero);
                     }
