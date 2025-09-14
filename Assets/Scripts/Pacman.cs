@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 public class Pacman : MonoBehaviour
 {
     public LayerMask wallLayer;
-    public Animator animation; 
     
     [SerializeField] private float speed = 5f;
     [SerializeField] private Transform pacmanMovePoint;
@@ -29,7 +28,6 @@ public class Pacman : MonoBehaviour
         {
             if (_moveAction.inProgress)
             {
-                animation.SetBool("isMoving", true);
                 Vector2 direction = _moveAction.ReadValue<Vector2>();
                 
                 if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
@@ -46,7 +44,6 @@ public class Pacman : MonoBehaviour
                         pacmanMovePoint.position += new Vector3(Zero, direction.y, Zero);
                     }
                 }
-                animation.SetBool("isMoving", false);
             }
         }
     }
