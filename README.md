@@ -16,3 +16,7 @@ September 13
 [pathfinding.webm](https://github.com/user-attachments/assets/19f66ed4-9a27-4678-b9ed-6e0c54dc40b1)
 
   
+September 16
+- custom pathing (using aStar package) for red ghost
+
+<img width="1300" height="737" alt="Screenshot from 2025-09-16 20-53-48" src="https://github.com/user-attachments/assets/d646baf7-ea90-4d93-8514-d596adeb88d0" />
